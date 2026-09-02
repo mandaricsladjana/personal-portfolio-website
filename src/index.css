@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  /* Main colors */
+  --color-background: #FFFFFF;
+  --color-foreground: #111111;
+
+  /* Brand */
+  --color-primary: #5014a6;
+  --color-primary-dark: #3d21a6;
+
+  /* Lilac */
+  --color-lilac: #C4B5FD;
+  --color-lilac-light: #bdb6e0;
+
+/*Abstract middle layyer*/
+--color-middle: #2c1e63;
+
+  /* Supporting text */
+  --color-muted: #6B7280;
+
+  /* Borders */
+  --color-border: #E5E7EB;
+
+  /*Overlay Hero picture*/
+  --color-overlay: #11001c;
+
+  /* Rounded corners */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  html{
+    scroll-behavior: smooth;
+  }
+}
+/*General/Deafult background, color and font style*/
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', sans-serif;
+
+}
+/*'Special' font style used for minor text like Headings'*/
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-background) 50%, transparent);
+   backdrop-filter: blur(16px);
+   border-radius: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-background)40%,transparent);
+   backdrop-filter: blur(16px);
+   border-radius: 1px solid color-mix(in srgb, var(--color-border) 20%, transparent);
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 30px
+  color-mix(in srgb, var(--color-primary) 50%, transparent );
+}
+
+.glow-border {
+  box-shadow:
+    0 0 20px rgba(124, 58, 237, 0.6),
+    0 0 40px rgba(124, 58, 237, 0.3),
+    inset 0 0 20px rgba(124, 58, 237, 0.15);
+}
+
+
+/* Defining ANIMATIONS */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+/*The floating numbers*/
+@keyframes data-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.25;
+  }
+
+  25% {
+    transform: translate(
+      calc(var(--move-x) * 0.5),
+      calc(var(--move-y) * 0.5)
+    );
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(
+      var(--move-x),
+      var(--move-y)
+    );
+    opacity: 0.6;
+  }
+
+  75% {
+    transform: translate(
+      calc(var(--move-x) * 0.3),
+      calc(var(--move-y) * 0.8)
+    );
+    opacity: 0.4;
+  }
+}
+
+.animate-data-float {
+  animation: data-float ease-in-out infinite;
+}
+
+/* Hero Headings fade-in different times */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+
+
+
+/* Download CV Button Animation */
+
+@keyframes animated-border {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: -500;
+  }
+}
+
+.group:hover .animated-border-path {
+  animation: animated-border 1.5s linear infinite;
+}
+
+.animated-border:hover {
+  background-color: color-mix(in srgb, #C4B5FD 15%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 20px color-mix(in srgb, #C4B5FD 15%, transparent);
+}
+
+.timeline-glow {
+  box-shadow: 0 0 40px
+    color-mix(in srgb, var(--color-primary) 35%, transparent),
+    0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+
+}
