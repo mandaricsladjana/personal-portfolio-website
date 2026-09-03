@@ -204,7 +204,7 @@ export const Skills = () => {
                             border-purple-900/30
                             bg-white/70
                             backdrop-blur-xl
-                            shadow-[0_20px_60px_rgba(88,28,135,0.12)]
+                            shadow-[0_20px_60px_rgba(88,28,135,0.15)]
                             overflow-hidden
                         "
                     >

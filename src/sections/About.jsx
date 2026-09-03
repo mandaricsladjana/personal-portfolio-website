@@ -101,8 +101,7 @@ export const About = () => {
                             </div>
 
                             {/* Collaboration message */}
-                            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300 mt-8">
-
+<div className="glass rounded-2xl p-6 shadow-[0_20px_60px_rgba(88,28,135,0.25)] animate-fade-in animation-delay-300 mt-8">
                                 <p className="text-lg font-medium italic text-gray-600">
                                     If you share an interest in data and
                                     analytics, I'm open for collaboration,
@@ -133,7 +132,7 @@ export const About = () => {
                                         border border-gray-200
                                         p-6
                                         rounded-2xl
-                                        shadow-sm
+                                        shadow-[0_20px_60px_rgba(88,28,135,0.20)]
                                         hover:shadow-xl
                                         hover:-translate-y-1
                                         transition-all

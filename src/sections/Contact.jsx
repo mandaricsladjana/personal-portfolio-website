@@ -1,4 +1,3 @@
-
 import {
     Mail,
     Phone,
@@ -209,6 +208,7 @@ export const Contact = () => {
                             rounded-3xl
                             border
                             border-primary/30
+                            shadow-[0_20px_60px_rgba(88,28,135,0.20)]
                             animate-fade-in
                             animation-delay-300
                         "
@@ -413,7 +413,7 @@ export const Contact = () => {
 
 
                         {/* ================================================= */}
-                        {/* CONTACT INFORMATION                                 */}
+                        {/* AVAILABLE FOR WORK                                 */}
                         {/* ================================================= */}
 
                         <div
@@ -423,94 +423,7 @@ export const Contact = () => {
                                 p-8
                                 border
                                 border-primary/20
-                                animate-fade-in
-                                animation-delay-400
-                            "
-                        >
-
-                            <h3 className="text-xl font-semibold mb-6">
-                                Contact Information
-                            </h3>
-
-
-                            <div className="space-y-4">
-
-                                {contactInfo.map((item) => {
-
-                                    const Icon = item.icon;
-
-                                    return (
-
-                                        <a
-                                            key={item.label}
-                                            href={item.href}
-                                            className="
-                                                flex
-                                                items-center
-                                                gap-4
-                                                p-4
-                                                rounded-xl
-                                                hover:bg-surface
-                                                transition-colors
-                                            "
-                                        >
-
-                                            {/* Icon */}
-
-                                            <div
-                                                className="
-                                                    w-12
-                                                    h-12
-                                                    rounded-xl
-                                                    bg-primary/10
-                                                    flex
-                                                    items-center
-                                                    justify-center
-                                                    shrink-0
-                                                "
-                                            >
-
-                                                <Icon className="w-5 h-5 text-primary" />
-
-                                            </div>
-
-
-                                            {/* Text */}
-
-                                            <div>
-
-                                                <div className="text-sm text-muted-foreground">
-                                                    {item.label}
-                                                </div>
-
-                                                <div className="font-medium wrap-break-words">
-                                                    {item.value}
-                                                </div>
-
-                                            </div>
-
-                                        </a>
-
-                                    );
-
-                                })}
-
-                            </div>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* CURRENTLY AVAILABLE                                */}
-                        {/* ================================================= */}
-
-                        <div
-                            className="
-                                glass
-                                rounded-3xl
-                                p-8
-                                border
-                                border-primary/20
+                                shadow-[0_20px_60px_rgba(88,28,135,0.20)]
                                 animate-fade-in
                                 animation-delay-500
                             "
@@ -560,7 +473,110 @@ export const Contact = () => {
                                 I'm currently open to new opportunities and
                                 exciting projects. Whether you need a full-time
                                 engineer or a freelance ads manager, let's talk!
+
                             </p>
+
+
+                            {/* ================================================= */}
+                            {/* CONTACT INFORMATION                                 */}
+                            {/* ================================================= */}
+
+                            <div
+                                className="
+                                    mt-8
+                                    glass
+                                    rounded-3xl
+                                    p-8
+                                    border
+                                    border-primary/20
+                                    bg-purple-100/30
+                                    animate-fade-in
+                                    animation-delay-400
+                                "
+                            >
+
+                                <h3 className="text-xl font-semibold mb-6">
+                                    Contact Information
+                                </h3>
+
+
+                                <div className="space-y-4">
+
+                                    {contactInfo.map((item) => {
+
+                                        const Icon = item.icon;
+
+                                        return (
+
+                                            <a
+                                                key={item.label}
+                                                href={item.href}
+                                                className="
+                                                    flex
+                                                    items-center
+                                                    gap-4
+                                                    p-4
+                                                    rounded-xl
+                                                    hover:bg-surface
+                                                    transition-all
+                                                    duration-300
+                                                    hover:-translate-y-1
+                                                "
+                                            >
+
+                                                {/* Icon */}
+
+                                                <div
+                                                    className="
+                                                        w-12
+                                                        h-12
+                                                        rounded-xl
+                                                        bg-primary/10
+                                                        flex
+                                                        items-center
+                                                        justify-center
+                                                        shrink-0
+                                                    "
+                                                >
+
+                                                    <Icon className="w-5 h-5 text-primary" />
+
+                                                </div>
+
+
+                                                {/* Text */}
+
+                                                <div>
+
+                                                    <div className="text-sm text-muted-foreground">
+                                                        {item.label}
+                                                    </div>
+
+                                                    <div
+                                                        className="
+                                                            font-medium
+                                                            wrap-break-words
+                                                            transition-all
+                                                            duration-300
+                                                            hover:text-purple-600
+                                                            hover:underline
+                                                            hover:underline-offset-4
+                                                        "
+                                                    >
+                                                        {item.value}
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+
+                                        );
+
+                                    })}
+
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -573,4 +589,3 @@ export const Contact = () => {
         </section>
     );
 };
-

@@ -108,7 +108,7 @@ export const Projects = () => {
                                 rounded-2xl
                                 overflow-hidden
                                 border border-gray-200
-                                shadow-sm
+                                shadow-[0_20px_60px_rgba(88,28,135,0.22)]
                                 transition-all
                                 duration-500
                                 ease-in-out

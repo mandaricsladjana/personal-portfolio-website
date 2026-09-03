@@ -150,7 +150,7 @@ export const Navbar = () => {
                 <Button
                     size="sm"
                     onClick={handleContactClick}
-                    className="h-[42px] border-2 border-primary hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
+                    className="h-[42px] border-2 border-primary hover:bg-primary/20 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
                 >
                     Contact Me
                 </Button>
