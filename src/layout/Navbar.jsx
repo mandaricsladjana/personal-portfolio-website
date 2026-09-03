@@ -4,7 +4,8 @@ import { Button } from "../components/Button";
 import { Menu, X } from "lucide-react";
 
 const Navlinks = [
-    { href: "about", title: "About" },
+    { href: "home", title: "Home" },
+    { href: "about", title: "About Me" },
     { href: "experience", title: "Experience" },
     { href: "projects", title: "Projects" },
     { href: "skills", title: "Skills" },
@@ -47,6 +48,20 @@ export const Navbar = () => {
         });
     };
 
+    const handleHomeClick = () => {
+        setIsMobileMenuOpen(false);
+
+        if (location.pathname !== "/") {
+            navigate("/");
+            return;
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     const handleContactClick = () => {
         setIsMobileMenuOpen(false);
 
@@ -74,21 +89,55 @@ export const Navbar = () => {
 
                 <Link
                     to="/"
-                    className="text-xl font-bold tracking-tight hover:text-lilac"
+                    aria-label="Go to homepage"
+                    className="
+                        inline-flex
+                        items-center
+                        justify-center
+                        w-18
+                        h-18
+                        rounded-full
+                        overflow-hidden
+                        border-2
+                        border-white/30
+                        hover:border-purple-500
+                        hover:-translate-y-1
+                        transition-all
+                        duration-300
+                    "
                 >
-                    SM<span className="text-primary">.</span>
+                    <img
+                        src="/ProfilePhotos/footer-logo-black.png"
+                        alt="Sladjana Mandaric"
+                        className="w-full h-full object-cover"
+                    />
                 </Link>
 
                 {/* DESKTOP NAVIGATION */}
                 <div className="hidden md:flex items-center gap-1">
-                    <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
+                    <div className="glass bg-white/10 rounded-full px-2 py-1 flex items-center gap-1 border-2 border-white/30">
 
                         {Navlinks.map((link) => (
                             <button
                                 type="button"
-                                onClick={() => handleSectionClick(link.href)}
+                                onClick={() =>
+                                    link.href === "home"
+                                        ? handleHomeClick()
+                                        : handleSectionClick(link.href)
+                                }
                                 key={link.href}
-                                className="px-4 py-2 text-base font-semibold text-muted hover:text-lilac rounded-full hover:bg-primary/10 transition-colors"
+                                className="
+                                    px-4
+                                    py-2
+                                    text-base
+                                    font-semibold
+                                    text-white/80
+                                    hover:text-purple-400
+                                    rounded-full
+                                    hover:bg-purple-500/15
+                                    transition-all
+                                    duration-300
+                                "
                             >
                                 {link.title}
                             </button>
@@ -98,14 +147,13 @@ export const Navbar = () => {
                 </div>
 
                 {/* CONTACT BUTTON */}
-                <div className="hidden md:block">
-                    <Button
-                        size="sm"
-                        onClick={handleContactClick}
-                    >
-                        Contact Me
-                    </Button>
-                </div>
+                <Button
+                    size="sm"
+                    onClick={handleContactClick}
+                    className="h-[42px] border-2 border-primary hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
+                >
+                    Contact Me
+                </Button>
 
                 {/* MOBILE MENU BUTTON */}
                 <button
@@ -131,9 +179,21 @@ export const Navbar = () => {
                         {Navlinks.map((link) => (
                             <button
                                 type="button"
-                                onClick={() => handleSectionClick(link.href)}
+                                onClick={() =>
+                                    link.href === "home"
+                                        ? handleHomeClick()
+                                        : handleSectionClick(link.href)
+                                }
                                 key={link.href}
-                                className="text-lg font-semibold text-muted hover:text-foreground py-2 transition-colors text-left"
+                                className="
+                                    text-lg
+                                    font-semibold
+                                    text-muted
+                                    hover:text-foreground
+                                    py-2
+                                    transition-colors
+                                    text-left
+                                "
                             >
                                 {link.title}
                             </button>

@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 const socialLinks = [
     {
         icon: FaGithub,
-        href: "#",
+        href: "https://github.com/mandaricsladjana",
         label: "GitHub",
     },
     {
@@ -16,25 +16,6 @@ const socialLinks = [
         icon: FaMedium,
         href: "https://medium.com/@mandaricsladjana",
         label: "Medium",
-    },
-];
-
-const footerLinks = [
-    {
-        href: "#about",
-        label: "About",
-    },
-    {
-        href: "#projects",
-        label: "Projects",
-    },
-    {
-        href: "#experience",
-        label: "Experience",
-    },
-    {
-        href: "#contact",
-        label: "Contact",
     },
 ];
 
@@ -128,11 +109,11 @@ export const Footer = () => {
 
                 <div
                     className="
-                        py-16
+                        py-4
                         grid
                         md:grid-cols-2
-                        lg:grid-cols-3
-                        gap-12
+                        lg:grid-cols-2
+                        gap-3
                     "
                 >
 
@@ -144,6 +125,10 @@ export const Footer = () => {
 
                         <a
                             href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToTop();
+                            }}
                             className="
                                 inline-block
                                 w-16
@@ -158,7 +143,7 @@ export const Footer = () => {
                             "
                         >
                             <img
-                                src="/ProfilePhotos/footer-logo.png"
+                                src="/ProfilePhotos/footer-logo-black.png"
                                 alt="Sladjana Mandaric"
                                 className="w-full h-full object-cover"
                             />
@@ -169,7 +154,7 @@ export const Footer = () => {
 
                         <p
                             className="
-                                mt-4
+                                mt-3
                                 max-w-sm
                                 text-sm
                                 leading-6
@@ -189,7 +174,7 @@ export const Footer = () => {
                                 inline-flex
                                 items-center
                                 gap-2
-                                mt-6
+                                mt-4
                                 px-4
                                 py-2
                                 rounded-full
@@ -218,61 +203,9 @@ export const Footer = () => {
                     </div>
 
 
-                    {/* ================= NAVIGATION ================= */}
-
-                    <div className="text-center md:text-left">
-
-                        <h3
-                            className="
-                                text-sm
-                                font-bold
-                                uppercase
-                                tracking-[0.2em]
-                                text-white
-                                mb-6
-                            "
-                        >
-                            Navigation
-                        </h3>
-
-
-                        <nav>
-
-                            <ul className="space-y-3">
-
-                                {footerLinks.map((link) => (
-
-                                    <li key={link.label}>
-
-                                        <a
-                                            href={link.href}
-                                            className="
-                                                inline-block
-                                                text-sm
-                                                text-white/60
-                                                hover:text-purple-500
-                                                hover:translate-x-1
-                                                transition-all
-                                                duration-300
-                                            "
-                                        >
-                                            {link.label}
-                                        </a>
-
-                                    </li>
-
-                                ))}
-
-                            </ul>
-
-                        </nav>
-
-                    </div>
-
-
                     {/* ================= SOCIALS ================= */}
 
-                    <div className="text-center md:text-left">
+                    <div className="text-center md:text-left pt-12 lg:pl-70">
 
                         <h3
                             className="
@@ -281,7 +214,7 @@ export const Footer = () => {
                                 uppercase
                                 tracking-[0.2em]
                                 text-white
-                                mb-6
+                                mb-4
                             "
                         >
                             Let's Connect
@@ -296,7 +229,7 @@ export const Footer = () => {
                                 max-w-xs
                                 mx-auto
                                 md:mx-0
-                                mb-6
+                                mb-4
                             "
                         >
                             Have an interesting project, opportunity, or idea?
@@ -370,13 +303,12 @@ export const Footer = () => {
 
                 <div
                     className="
-                        py-6
-                        flex
-                        flex-col
-                        md:flex-row
+                        py-1
+                        grid
+                        grid-cols-1
+                        md:grid-cols-3
                         items-center
-                        justify-between
-                        gap-4
+                        gap-1
                     "
                 >
 
@@ -388,7 +320,7 @@ export const Footer = () => {
                             text-white/40
                             text-center
                             md:text-left
-                    "
+                        "
                     >
                         © {currentYear} Sladjana Mandaric. All rights reserved.
                     </p>
@@ -400,6 +332,7 @@ export const Footer = () => {
                         className="
                             flex
                             items-center
+                            justify-center
                             gap-2
                             text-xs
                             text-white/40
@@ -423,29 +356,33 @@ export const Footer = () => {
 
                     {/* Back To Top */}
 
-                    <button
-                        onClick={scrollToTop}
-                        aria-label="Back to top"
-                        className="
-                            w-9
-                            h-9
-                            rounded-full
-                            bg-white/5
-                            border
-                            border-white/10
-                            flex
-                            items-center
-                            justify-center
-                            text-white/60
-                            hover:text-purple-500
-                            hover:border-purple-500/50
-                            hover:bg-purple-500/10
-                            transition-all
-                            duration-300
-                        "
-                    >
-                        <ArrowUp className="w-4 h-4" />
-                    </button>
+                    <div className="flex justify-center md:justify-end">
+
+                        <button
+                            onClick={scrollToTop}
+                            aria-label="Back to top"
+                            className="
+                                w-9
+                                h-9
+                                rounded-full
+                                bg-white/5
+                                border
+                                border-white/10
+                                flex
+                                items-center
+                                justify-center
+                                text-white/60
+                                hover:text-purple-500
+                                hover:border-purple-500/50
+                                hover:bg-purple-500/10
+                                transition-all
+                                duration-300
+                            "
+                        >
+                            <ArrowUp className="w-4 h-4" />
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -454,4 +391,3 @@ export const Footer = () => {
         </footer>
     );
 };
-

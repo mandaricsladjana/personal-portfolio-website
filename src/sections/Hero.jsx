@@ -1,5 +1,5 @@
 import { ArrowRight, Download } from "lucide-react";
-import {FaGithub, FaLinkedin, FaMedium } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { Button } from "../components/Button";
 import { DataParticles } from "../components/DataParticles";
 
@@ -71,9 +71,18 @@ export const Hero = () => {
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-4 animate-fade-in animation-delay-300">
 
-                            {/* Contact Me */}
-                            <Button size="lg">
-                                Contact Me
+                            {/* View My Work */}
+                            <Button
+                                size="lg"
+                                onClick={() => {
+                                    document.getElementById("projects")?.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start",
+                                    });
+                                }}
+                                className="border-2 border-primary hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
+                            >
+                                View My Work
                                 <ArrowRight className="w-5 h-5" />
                             </Button>
 
@@ -96,71 +105,87 @@ export const Hero = () => {
                                     style={{ overflow: "visible" }}
                                 >
                                     <path
- 
-                                    d="M 30 1 H 170 A 29 29 0 0 1 199 30 A 29 29 0 0 1 170 59 H 30 A 29 29 0 0 1 1 30 A 29 29 0 0 1 30 1 Z"
-                                    fill="none"
-                                    stroke="var(--color-primary)"
-                                    strokeWidth={2}
-                                    strokeDasharray="400 500"
-                                    strokeDashoffset={400}
-                                    strokeLinecap="round"
-                                    className="animated-border-path" /* animated-cv-path */
+                                        d="M 30 1 H 170 A 29 29 0 0 1 199 30 A 29 29 0 0 1 170 59 H 30 A 29 29 0 0 1 1 30 A 29 29 0 0 1 30 1 Z"
+                                        fill="none"
+                                        stroke="var(--color-primary)"
+                                        strokeWidth={2}
+                                        strokeDasharray="400 500"
+                                        strokeDashoffset={400}
+                                        strokeLinecap="round"
+                                        className="animated-border-path"
                                     />
                                 </svg>
 
                                 {/* Button content */}
-                                
-                              <span className="relative z-10 flex items-center justify-center gap-2">
-                                <Download className="w-5 h-5" />
-                                Download CV
-                              </span>
+                                <span className="relative z-10 flex items-center justify-center gap-2">
+                                    <Download className="w-5 h-5" />
+                                    Download CV
+                                </span>
                             </button>
                         </div>
-                            {/* SOCIALS BUTTONS */}
-                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400 ">
-                            <span className="text-sm text-white">Let's connect:</span>
-                            {[
-                                {icon: FaGithub, href: "https://www.linkedin.com/in/sladjanamandaric/"},
-                                {icon: FaLinkedin, href: "https://www.linkedin.com/in/sladjanamandaric/"},
-                                {icon: FaMedium, href: "https://medium.com/@mandaricsladjana"}
-                                ].map((social, idx) =>(
-                                    <a key={idx} href={social.href} className="p-2 rounded-full glass hover:bg-transparent/10 hover:text-primary transition-all duration-300">
-                                        {<social.icon className="w-5 h-5" />} </a>
-                                ))
-                                }
-                        </div>
 
+                        {/* SOCIALS BUTTONS */}
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-white">Let's connect:</span>
+
+                            {[
+                                {
+                                    icon: FaGithub,
+                                    href: "https://github.com/mandaricsladjana"
+                                },
+                                {
+                                    icon: FaLinkedin,
+                                    href: "https://www.linkedin.com/in/sladjanamandaric/"
+                                },
+                                {
+                                    icon: FaMedium,
+                                    href: "https://medium.com/@mandaricsladjana"
+                                }
+                            ].map((social, idx) => (
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    className="p-2 rounded-full glass hover:bg-transparent/10 hover:text-primary transition-all duration-300"
+                                >
+                                    {<social.icon className="w-5 h-5" />}
+                                </a>
+                            ))}
+                        </div>
 
                     </div>
 
                     {/* Right column - PROFILE PICTURE */}
                     <div className="relative animate-fade-in animation-delay-300">
-                        {/*Profile picture*/}
+
+                        {/* Profile picture */}
                         <div className="relative max-w-md mx-auto">
+
                             <div
-                            className="absolute inset-0
-                            rounded-3xl bg-linear-to-br
-                            from-primary-dark/30 via-transparent
-                            to-primary-dark/10 blur 2xl animate-pulse" 
+                                className="absolute inset-0
+                                rounded-3xl bg-linear-to-br
+                                from-primary-dark/30 via-transparent
+                                to-primary-dark/10 blur 2xl animate-pulse"
                             />
+
                             <div className="relative glass rounded-3xl p-2 glow-border">
-                                <img src="/ProfilePhotos/ProfilePhoto.jpg" alt="Sladjana Mandaric" 
-                                className="w-full aspect-4/5 object-cover rounded-2xl"
+
+                                <img
+                                    src="/ProfilePhotos/ProfilePhoto.jpg"
+                                    alt="Sladjana Mandaric"
+                                    className="w-full aspect-4/5 object-cover rounded-2xl"
                                 />
 
-                            {/*Floating Badge*/}
-                            <div>
+                                {/* Floating Badge */}
                                 <div>
-                                    <div />
+                                    <div>
+                                        <div />
                                         <span>
 
                                         </span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/*Stats Badge */}
-
-
+                                {/* Stats Badge */}
 
                             </div>
                         </div>

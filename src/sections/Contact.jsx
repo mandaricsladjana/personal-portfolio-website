@@ -550,7 +550,7 @@ export const Contact = () => {
 
 
                                 <h3 className="text-lg font-semibold">
-                                    Currently Available
+                                    Available For Work
                                 </h3>
 
                             </div>

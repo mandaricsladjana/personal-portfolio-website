@@ -91,7 +91,7 @@ return ( <section
                     Career Journey
                 </span>
 
-                <h2
+                            <h2
                     className="
                         text-4xl
                         md:text-5xl
@@ -100,7 +100,7 @@ return ( <section
                         mb-6
                         animate-fade-in
                         animation-delay-100
-                        text-primary
+                        text-black
                     "
                 >
                     Experience that{" "}
@@ -108,7 +108,6 @@ return ( <section
                         speaks volumes
                     </span>
                 </h2>
-
                 <p
                     className="
                         text-primary
@@ -124,87 +123,86 @@ return ( <section
 
 {/* ================= EXPERIENCE STATS ================= */}
 
-<div
-    className="
-        relative
-        w-full
-        rounded-3xl
-        border
-        border-purple-900/70
-        mb-20
-        overflow-hidden
-        bg-purple-950/50
-        shadow-[0_0_30px_rgba(88,28,135,0.25)]
-        stats-glow
-    "
+<div 
+    className=" 
+        relative 
+        w-full 
+        max-w-3xl
+        mx-auto
+        rounded-3xl 
+        border 
+        border-purple-900/70 
+        mb-20 
+        overflow-hidden 
+        bg-purple-950/50 
+        shadow-[0_0_30px_rgba(88,28,135,0.25)] 
+        stats-glow 
+    " 
 >
-    <div className="grid grid-cols-2 md:grid-cols-4">
+    <div className="grid grid-cols-2 md:grid-cols-4"> 
 
-        {/* STAT 1 */}
-        <div className="relative px-6 py-8 md:px-8 md:py-10 text-center">
+        {/* STAT 1 */} 
+        <div className="relative px-6 py-5 md:px-8 md:py-6 text-left"> 
 
-            <p className="text-sm md:text-base font-medium text-purple-200 mb-2">
-                Years of Experience
-            </p>
+            <p className="text-sm md:text-base font-medium text-purple-200 mb-1"> 
+                Years of Experience 
+            </p> 
 
-            <p className="text-3xl md:text-4xl font-bold text-white">
-                5+
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white"> 
+                5+ 
+            </p> 
 
-            {/* Separator */}
-            <div className="hidden md:block absolute right-0 top-6 bottom-6 border-r border-dashed border-purple-800/70" />
-
-        </div>
-
-
-        {/* STAT 2 */}
-        <div className="relative px-6 py-8 md:px-8 md:py-10 text-center">
-
-            <p className="text-sm md:text-base font-medium text-purple-200 mb-2">
-                Projects Completed
-            </p>
-
-            <p className="text-3xl md:text-4xl font-bold text-white">
-                20+
-            </p>
-
-            {/* Separator */}
-            <div className="hidden md:block absolute right-0 top-6 bottom-6 border-r border-dashed border-purple-800/70" />
-
-        </div>
+            {/* Separator */} 
+            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-2 border-white/80" />
+        </div> 
 
 
-        {/* STAT 3 */}
-        <div className="relative px-6 py-8 md:px-8 md:py-10 text-center">
+        {/* STAT 2 */} 
+        <div className="relative px-6 py-5 md:px-8 md:py-6 text-left"> 
 
-            <p className="text-sm md:text-base font-medium text-purple-200 mb-2">
-                Tools & Technologies
-            </p>
+            <p className="text-sm md:text-base font-medium text-purple-200 mb-1"> 
+                Projects Completed 
+            </p> 
 
-            <p className="text-3xl md:text-4xl font-bold text-white">
-                15+
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white"> 
+                20+ 
+            </p> 
 
-            {/* Separator */}
-            <div className="hidden md:block absolute right-0 top-6 bottom-6 border-r border-dashed border-purple-800/70" />
+            {/* Separator */} 
+            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-2 border-white/80" />
+        </div> 
 
-        </div>
+
+        {/* STAT 3 */} 
+        <div className="relative px-6 py-5 md:px-8 md:py-6 text-left"> 
+
+            <p className="text-sm md:text-base font-medium text-purple-200 mb-1"> 
+                Tools & Technologies 
+            </p> 
+
+            <p className="text-3xl md:text-4xl font-bold text-white"> 
+                15+ 
+            </p> 
+
+            {/* Separator */} 
+            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-2 border-white/80" />  
+        </div> 
 
 
-        {/* STAT 4 */}
-        <div className="px-6 py-8 md:px-8 md:py-10 text-center">
+        {/* STAT 4 */} 
+        <div className="px-6 py-5 md:px-8 md:py-6 text-left"> 
 
-            <p className="text-sm md:text-base font-medium text-purple-200 mb-2">
-                Professional Domains
-            </p>
+            <p className="text-sm md:text-base font-medium text-purple-200 mb-1"> 
+                Professional Domains 
+            </p> 
 
-            <p className="text-3xl md:text-4xl font-bold text-white">
-                4
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white"> 
+                4 
+            </p> 
 
-        </div>
+        </div> 
 
-    </div>
+    </div> 
 </div>
 
 
