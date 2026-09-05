@@ -30,7 +30,7 @@ export const Hero = () => {
 
                         {/* Small introduction badge */}
                         <div className="animate-fade-in">
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-bold text-primary-dark">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 text-sm text-primary-dark">
                                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                                 Quality Engineer | Data Analyst | Ads Management
                             </span>
@@ -80,7 +80,7 @@ export const Hero = () => {
                                         block: "start",
                                     });
                                 }}
-                                className="border-2 border-primary hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
+                                className="border-2 border-primary hover:bg-primary/20 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
                             >
                                 View My Work
                                 <ArrowRight className="w-5 h-5" />

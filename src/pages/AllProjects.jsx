@@ -1,13 +1,32 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/projects/projectdetailslist";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, ArrowUpRight} from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
-export const Projects = () => {
+import { projects } from "@/projects/projectdetailslist";
+import { projectDetails } from "@/projects";
+
+const filters = [
+    "All",
+    "Data Analytics",
+    "Business Intelligence",
+    "SQL",
+    "Cloud & Data Engineering",
+    "Web Development",
+];
+
+export const AllProjects = () => {
+    const [activeFilter, setActiveFilter] = useState("All");
+
+    const filteredProjects =
+        activeFilter === "All"
+            ? projects
+            : projects.filter((project) =>
+                  project.category?.includes(activeFilter)
+              );
+
     return (
-        <section
-            id="projects"
-            className="relative overflow-hidden bg-gray-100 border-t border-gray-300"
-        >
+        <section className="relative overflow-hidden bg-gray-100 border-t border-gray-300 min-h-screen">
 
             {/* ================= BACKGROUND GLOW ================= */}
 
@@ -18,41 +37,75 @@ export const Projects = () => {
 
             {/* ================= CONTENT ================= */}
 
-            <div className="container mx-auto px-10 md:px-16 lg:px-24 relative z-10">
+            <div className="container mx-auto px-6 md:px-10 lg:px-16 relative z-10">
 
 
-                {/* ================= SECTION TITLE ================= */}
+                {/* ================= PAGE TITLE ================= */}
 
-                <div className="pt-8 pb-12 text-center">
+                <div className="pt-32 pb-10 text-center">
 
                     <span className="text-primary text-sm font-medium tracking-wider uppercase">
                         My Work
                     </span>
 
-                    <h2 className="text-5xl md:text-6xl font-bold leading-tight mt-1">
+                    <h1 className="text-5xl md:text-6xl font-bold leading-tight mt-1">
 
-                        Featured{" "}
+                        All{" "}
 
                         <span className="text-primary italic font-serif">
                             Projects
                         </span>
 
-                    </h2>
+                    </h1>
 
                     <p className="text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
-                        A selection of projects where I combine data,
-                        technology, and problem-solving to create meaningful
-                        and practical solutions.
+                        Explore my projects, from data analytics and business
+                        intelligence to cloud solutions and web development.
                     </p>
+
+                </div>
+
+
+                {/* ================= FILTERS ================= */}
+
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
+
+                    {filters.map((filter) => (
+
+                        <button
+                            key={filter}
+                            type="button"
+                            onClick={() => setActiveFilter(filter)}
+                            className={`
+                                px-5
+                                py-2.5
+                                rounded-full
+                                text-sm
+                                font-semibold
+                                border-2
+                                transition-all
+                                duration-300
+                                ease-in-out
+                                ${
+                                    activeFilter === filter
+                                        ? "bg-primary text-white border-primary shadow-[0_0_18px_rgba(124,58,237,0.35)]"
+                                        : "bg-white text-purple-600 border-purple-200 hover:bg-purple-50 hover:border-purple-400"
+                                }
+                            `}
+                        >
+                            {filter}
+                        </button>
+
+                    ))}
 
                 </div>
 
 
                 {/* ================= PROJECT GRID ================= */}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 pb-20">
 
-                    {projects.slice(0, 4).map((project, index) => (
+                    {filteredProjects.map((project, index) => (
 
                         <article
                             key={index}
@@ -62,7 +115,7 @@ export const Projects = () => {
                                 rounded-2xl
                                 overflow-hidden
                                 border border-gray-200
-                                shadow-[0_20px_60px_rgba(88,28,135,0.22)]
+                                shadow-[0_20px_60px_rgba(88,28,135,0.18)]
                                 transition-all
                                 duration-500
                                 ease-in-out
@@ -82,8 +135,7 @@ export const Projects = () => {
                                         alt={project.title}
                                         className="
                                             w-full
-                                            h-64
-                                            md:h-72
+                                            h-52
                                             object-cover
                                             transition-transform
                                             duration-700
@@ -91,8 +143,6 @@ export const Projects = () => {
                                             group-hover:scale-105
                                         "
                                     />
-
-                                    {/* Image overlay */}
 
                                     <div
                                         className="
@@ -116,15 +166,16 @@ export const Projects = () => {
 
                             {/* ================= PROJECT CONTENT ================= */}
 
-                            <div className="p-7">
+                            <div className="p-6">
 
 
                                 {/* ================= TITLE ================= */}
 
                                 <Link to={`/projects/${project.id}`}>
-                                    <h3
+
+                                    <h2
                                         className="
-                                            text-2xl
+                                            text-xl
                                             font-bold
                                             text-gray-900
                                             mb-3
@@ -135,27 +186,28 @@ export const Projects = () => {
                                         "
                                     >
                                         {project.title}
-                                    </h3>
+                                    </h2>
+
                                 </Link>
 
 
                                 {/* ================= DESCRIPTION ================= */}
 
-                                <p className="text-gray-600 leading-relaxed mb-5">
+                                <p className="text-gray-600 leading-relaxed text-sm mb-5">
                                     {project.description}
                                 </p>
 
 
                                 {/* ================= TAGS ================= */}
 
-                                <div className="flex flex-wrap gap-2 mb-7">
+                                <div className="flex flex-wrap gap-2 mb-6">
 
                                     {project.tags.map((tag, tagIndex) => (
 
                                         <span
                                             key={tagIndex}
                                             className="
-                                                px-3
+                                                px-2.5
                                                 py-1
                                                 rounded-full
                                                 text-xs
@@ -176,7 +228,7 @@ export const Projects = () => {
 
                                 {/* ================= PROJECT BUTTONS ================= */}
 
-                                <div className="flex flex-wrap gap-3">
+                                <div className="flex flex-wrap gap-2.5">
 
                                     {/* VIEW PROJECT */}
 
@@ -186,12 +238,12 @@ export const Projects = () => {
                                             inline-flex
                                             items-center
                                             justify-center
-                                            px-5
-                                            py-2.5
+                                            px-4
+                                            py-2
                                             rounded-full
                                             bg-primary
                                             text-white
-                                            text-sm
+                                            text-xs
                                             font-bold
                                             transition-all
                                             duration-300
@@ -216,13 +268,13 @@ export const Projects = () => {
                                                 inline-flex
                                                 items-center
                                                 justify-center
-                                                px-5
-                                                py-2.5
+                                                px-4
+                                                py-2
                                                 rounded-full
                                                 border-2
                                                 border-primary
                                                 text-primary
-                                                text-sm
+                                                text-xs
                                                 font-bold
                                                 transition-all
                                                 duration-300
@@ -248,87 +300,19 @@ export const Projects = () => {
                 </div>
 
 
-                {/* ================================================== */}
-                {/* VIEW ALL PROJECTS BUTTON */}
-                {/* ================================================== */}
+                {/* ================= NO PROJECTS MESSAGE ================= */}
 
-                <div className="flex justify-center pt-12 pb-20">
+                {filteredProjects.length === 0 && (
 
-                    <Link
-                        to="/pages"
-                        className="
-                            group
-                            relative
-                            inline-flex
-                            items-center
-                            justify-center
-                            gap-3
-                            px-8
-                            py-3.5
-                            rounded-full
-                            bg-white
-                            text-purple-600
-                            text-base
-                            font-bold
-                            border-2
-                            border-purple-300
-                            overflow-hidden
-                            transition-all
-                            duration-300
-                            ease-out
-                            hover:bg-purple-100
-                            hover:text-purple-700
-                            hover:border-purple-400
-                            hover:shadow-[0_0_22px_rgba(124,58,237,0.25)]
-                            hover:-translate-y-0.5
-                        "
-                    >
+                    <div className="text-center pb-20">
 
-                        {/* ================= ANIMATED BORDER ================= */}
+                        <p className="text-gray-500 text-lg">
+                            No projects found in this category yet.
+                        </p>
 
-                        <span
-                            className="
-                                absolute
-                                inset-0
-                                rounded-full
-                                pointer-events-none
-                                border-2
-                                border-transparent
-                                transition-all
-                                duration-500
-                                group-hover:border-purple-500
-                                group-hover:shadow-[inset_0_0_12px_rgba(124,58,237,0.15)]
-                            "
-                        />
+                    </div>
 
-
-                        {/* ================= BUTTON TEXT ================= */}
-
-                        <span className="relative z-10">
-                            View All Projects
-                        </span>
-
-
-                        {/* ================= LINK ARROW ================= */}
-
-                        <ArrowUpRight
-                            className="
-                                relative
-                                z-10
-                                w-5
-                                h-5
-                                stroke-[2.5]
-                                transition-all
-                                duration-300
-                                ease-out
-                                group-hover:translate-x-1
-                                group-hover:-translate-y-1
-                            "
-                        />
-
-                    </Link>
-
-                </div>
+                )}
 
             </div>
 

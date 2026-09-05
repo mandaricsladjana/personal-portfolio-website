@@ -299,92 +299,92 @@ export const Footer = () => {
                 <div className="border-t border-white/10" />
 
 
-                {/* ================= BOTTOM BAR ================= */}
+{/* ================= BOTTOM BAR ================= */}
 
-                <div
-                    className="
-                        py-1
-                        grid
-                        grid-cols-1
-                        md:grid-cols-3
-                        items-center
-                        gap-1
-                    "
-                >
+<div
+    className="
+        py-1
+        grid
+        grid-cols-1
+        md:grid-cols-3
+        gap-1
+    "
+>
 
-                    {/* Copyright */}
+    {/* Copyright + Made With */}
 
-                    <p
-                        className="
-                            text-xs
-                            text-white/40
-                            text-center
-                            md:text-left
-                        "
-                    >
-                        © {currentYear} Sladjana Mandaric. All rights reserved.
-                    </p>
+    <div
+        className="
+            md:col-span-2
+            flex
+            items-center
+            justify-start
+            gap-3
+            text-xs
+            text-white/40
+            text-left
+        "
+    >
+        <span>
+            © {currentYear} Sladjana Mandaric. All rights reserved.
+        </span>
+
+        <span className="text-white/20">
+            ·
+        </span>
+
+        <span
+            className="
+                flex
+                items-center
+                gap-2
+            "
+        >
+            Made with
+
+            <Heart
+                className="
+                    w-3.5
+                    h-3.5
+                    text-purple-500
+                    fill-current
+                "
+            />
+        </span>
+    </div>
 
 
-                    {/* Made With */}
+    {/* Back To Top */}
 
-                    <p
-                        className="
-                            flex
-                            items-center
-                            justify-center
-                            gap-2
-                            text-xs
-                            text-white/40
-                        "
-                    >
-                        Made with
+    <div className="flex justify-center md:justify-end">
 
-                        <Heart
-                            className="
-                                w-3.5
-                                h-3.5
-                                text-purple-500
-                                fill-current
-                            "
-                        />
+        <button
+            onClick={scrollToTop}
+            aria-label="Back to top"
+            className="
+                w-9
+                h-9
+                rounded-full
+                bg-white/5
+                border
+                border-white/10
+                flex
+                items-center
+                justify-center
+                text-white/60
+                hover:text-purple-500
+                hover:border-purple-500/50
+                hover:bg-purple-500/10
+                transition-all
+                duration-300
+            "
+        >
+            <ArrowUp className="w-4 h-4" />
+        </button>
 
-                        and creativity.
+    </div>
 
-                    </p>
-
-
-                    {/* Back To Top */}
-
-                    <div className="flex justify-center md:justify-end">
-
-                        <button
-                            onClick={scrollToTop}
-                            aria-label="Back to top"
-                            className="
-                                w-9
-                                h-9
-                                rounded-full
-                                bg-white/5
-                                border
-                                border-white/10
-                                flex
-                                items-center
-                                justify-center
-                                text-white/60
-                                hover:text-purple-500
-                                hover:border-purple-500/50
-                                hover:bg-purple-500/10
-                                transition-all
-                                duration-300
-                            "
-                        >
-                            <ArrowUp className="w-4 h-4" />
-                        </button>
-
-                    </div>
-
-                </div>
+</div>
 
             </div>
 

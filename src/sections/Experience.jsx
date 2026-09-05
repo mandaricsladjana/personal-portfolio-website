@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const experience = [
     {
@@ -6,10 +7,12 @@ const experience = [
         role: "Data Analytics",
         icon: "",
         company: "Freelance",
-        description: "KPI Management, Dashboard building",
+        description:
+            "KPI Management, Dashboard building",
         technologies: ["Power BI", "SQL", "Git", "Github"],
         current: true,
         path: "/experience/data-analytics",
+        image: "/ExperiencePhotos/data-analytics.jpg",
     },
 
     {
@@ -22,6 +25,7 @@ const experience = [
         technologies: ["Google Analytics 4", "Google Ads"],
         current: true,
         path: "/experience/ads",
+        image: "/ExperiencePhotos/ads.jpg",
     },
 
     {
@@ -34,6 +38,7 @@ const experience = [
         technologies: ["Power BI", "Excel", "SQL", "Azure"],
         current: false,
         path: "/experience/quality-engineer",
+        image: "/ExperiencePhotos/continental.jpg",
     },
 
     {
@@ -46,6 +51,7 @@ const experience = [
         technologies: ["Power BI", "Excel", "SQL", "SAP"],
         current: false,
         path: "/experience/logistics",
+        image: "/ExperiencePhotos/logistics.jpg",
     },
 ];
 
@@ -54,539 +60,695 @@ export const Experience = () => {
         <section
             id="experience"
             className="
-                py-32
                 relative
                 overflow-hidden
-                bg-purple-50/40
+                py-32
+                bg-[#080516]
             "
         >
+            {/* BACKGROUND */}
 
-            {/* ================= BACKGROUND IMAGE ================= */}
-
-
-            {/* Background image */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
                 <img
                     src="/ProfilePhotos/background7a.jpg"
-                    alt="Experience image"
-                    className="w-full h-full object-cover opacity-60"
+                    alt=""
+                    className="
+                        w-full
+                        h-full
+                        object-cover
+                        opacity-30
+                    "
                 />
 
-                <div className="absolute inset-0 bg-linear-to-b from-black/80 to-black/85"></div>
+                <div
+                    className="
+                        absolute
+                        inset-0
+                        bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.28)_0%,rgba(17,10,35,0.8)_45%,rgba(5,3,15,0.98)_100%)]
+                    "
+                />
+
+                {/* Purple glow behind timeline */}
+
+                <div
+                    className="
+                        absolute
+                        left-1/2
+                        top-1/2
+                        -translate-x-1/2
+                        -translate-y-1/2
+                        w-[700px]
+                        h-[900px]
+                        rounded-full
+                        bg-purple-600/10
+                        blur-[140px]
+                    "
+                />
+
+                {/* Small atmospheric glow */}
+
+                <div
+                    className="
+                        absolute
+                        top-20
+                        left-10
+                        w-72
+                        h-72
+                        rounded-full
+                        bg-violet-500/10
+                        blur-[100px]
+                    "
+                />
+
+                <div
+                    className="
+                        absolute
+                        bottom-0
+                        right-0
+                        w-96
+                        h-96
+                        rounded-full
+                        bg-purple-500/10
+                        blur-[120px]
+                    "
+                />
             </div>
-
-
-            {/* Lilac overlay over background image */}
-
-            <div
-                className="
-                    absolute
-                    inset-0
-                    pointer-events-none
-                    bg-purple-100/70
-                    mix-blend-multiply
-                "
-            />
-
-            {/* Soft lilac glow */}
-
-            <div
-                className="
-                    absolute
-                    top-1/2
-                    left-1/4
-                    w-96
-                    h-96
-                    bg-purple-300/15
-                    rounded-full
-                    blur-3xl
-                    -translate-y-1/2
-                    pointer-events-none
-                "
-            />
-
-            {/* ================= CONTENT ================= */}
 
             <div className="container mx-auto px-6 relative z-10">
 
-                {/* ================= SECTION HEADER ================= */}
+                {/* HEADER */}
 
-                <div className="max-w-3xl mb-16 mx-auto text-center">
+                <div className="max-w-3xl mx-auto text-center mb-24">
 
-                    <span
+                    <div
                         className="
-                            text-primary
+                            inline-flex
+                            items-center
+                            gap-3
+                            px-5
+                            py-2
+                            rounded-full
+                            border
+                            border-purple-400/30
+                            bg-purple-500/10
+                            backdrop-blur-md
+                            text-purple-300
                             text-sm
                             font-medium
-                            tracking-wider
+                            tracking-[0.2em]
                             uppercase
-                            animate-fade-in
+                            shadow-[0_0_30px_rgba(139,92,246,0.12)]
                         "
                     >
+                        <span
+                            className="
+                                w-2
+                                h-2
+                                rounded-full
+                                bg-purple-400
+                                shadow-[0_0_12px_rgba(168,85,247,0.9)]
+                            "
+                        />
+
                         Career Journey
-                    </span>
+                    </div>
 
                     <h2
                         className="
                             text-4xl
-                            md:text-5xl
+                            md:text-6xl
                             font-bold
-                            mt-4
-                            mb-6
-                            animate-fade-in
-                            animation-delay-100
+                            mt-7
                             text-white
+                            tracking-tight
                         "
                     >
-                        Experience that{" "}
-                        <span className="font-serif italic font-normal text-white">
-                            speaks volumes
+                        From experience
+                        <br />
+                        <span
+                            className="
+                                font-serif
+                                italic
+                                font-normal
+                                text-purple-300
+                            "
+                        >
+                            to what comes next
                         </span>
                     </h2>
 
                     <p
                         className="
-                            text-primary
-                            animate-fade-in
-                            animation-delay-200
+                            mt-6
+                            text-white/50
+                            text-base
+                            md:text-lg
+                            max-w-2xl
+                            mx-auto
+                            leading-relaxed
                         "
                     >
-                        "A timeline of my professional growth, from curious
-                        beginner to today"
+                        A journey through data, quality, logistics and
+                        digital projects — each experience building the next.
                     </p>
-
                 </div>
 
 
-                {/* ================= EXPERIENCE STATS ================= */}
+                {/* TIMELINE */}
 
-                <div
-                    className="
-                        relative
-                        w-full
-                        max-w-3xl
-                        mx-auto
-                        rounded-3xl
-                        border-3
-                        border-primary/40
-                        mb-20
-                        overflow-hidden
-                        bg-white/92
-                        backdrop-blur-sm
-                        shadow-[0_10px_40px_rgba(139,92,246,0.12)]
-                        stats-glow
-                    "
-                >
+                <div className="relative max-w-6xl mx-auto">
 
-                    <div className="grid grid-cols-2 md:grid-cols-4">
-
-                        {/* STAT 1 */}
-
-                        <div className="
-                        relative 
-                        px-6 
-                        py-5 
-                        md:px-8 
-                        md:py-6 
-                        text-left 
-                        hover:text-primary
-                                            hover:border-purple-500/50
-                                            hover:bg-purple-500/30
-                                            hover:-translate-y-1
-                                            transition-all
-                                            duration-300">
-
-                            <p className="text-sm md:text-base font-medium text-black mb-1">
-                                Years of Experience
-                            </p>
-
-                            <p className="text-3xl md:text-4xl font-bold text-purple-950">
-                                5+
-                            </p>
-
-                            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-3 border-primary/70" />
-
-                        </div>
-
-
-                        {/* STAT 2 */}
-
-                        <div className="
-                        relative 
-                        px-6 
-                        py-5 
-                        md:px-8 
-                        md:py-6 
-                        text-left 
-                        hover:text-primary
-                                            hover:border-purple-500/50
-                                            hover:bg-purple-500/30
-                                            hover:-translate-y-1
-                                            transition-all
-                                            duration-300">
-
-                            <p className="text-sm md:text-base font-medium text-black mb-1">
-                                Projects Completed
-                            </p>
-
-                            <p className="text-3xl md:text-4xl font-bold text-purple-950">
-                                20+
-                            </p>
-
-                            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-3 border-primary/70" />
-
-                        </div>
-
-
-                        {/* STAT 3 */}
-
-                        <div className="
-                        relative 
-                        px-6 
-                        py-5 
-                        md:px-8 
-                        md:py-6 
-                        text-left 
-                        hover:text-primary
-                                            hover:border-purple-500/50
-                                            hover:bg-purple-500/30
-                                            hover:-translate-y-1
-                                            transition-all
-                                            duration-300">
-
-                            <p className="text-sm md:text-base font-medium text-black mb-1">
-                                Tools & Technologies
-                            </p>
-
-                            <p className="text-3xl md:text-4xl font-bold text-purple-950">
-                                15+
-                            </p>
-
-                            <div className="hidden md:block absolute right-0 top-5 bottom-5 border-r-3 border-primary/70" />
-
-                        </div>
-
-
-                        {/* STAT 4 */}
-
-                        <div className="
-                        relative 
-                        px-6 
-                        py-5 
-                        md:px-8 
-                        md:py-6 
-                        text-left 
-                        hover:text-primary
-                                            hover:border-purple-500/50
-                                            hover:bg-purple-500/30
-                                            hover:-translate-y-1
-                                            transition-all
-                                            duration-300">
-
-                            <p className="text-sm md:text-base font-medium text-black mb-1 transition-all duration-300 group-hover:text-purple-600 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]">
-                                Professional Domains
-                            </p>
-
-                            <p className="text-3xl md:text-4xl font-bold text-purple-950">
-                                4
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                {/* ================= LARGE EXPERIENCE CONTAINER ================= */}
-
-                <div
-                    className="
-                        relative
-                        w-full
-                        rounded-[3rem]
-                        border
-                        border-purple-300/40
-                        bg-white/50
-                        backdrop-blur-sm
-                        px-6
-                        py-12
-                        md:px-12
-                        md:py-16
-                        shadow-[0_10px_50px_rgba(139,92,246,0.10)]
-                        overflow-hidden
-                    "
-                >
-
-                    {/* Subtle inner glow */}
+                    {/* CENTRAL TIMELINE */}
 
                     <div
                         className="
                             absolute
-                            top-1/2
                             left-1/2
                             -translate-x-1/2
-                            -translate-y-1/2
-                            w-150
-                            h-150
-                            bg-purple-300/10
-                            rounded-full
-                            blur-3xl
-                            pointer-events-none
+                            top-0
+                            bottom-0
+                            w-[2px]
+                            bg-linear-to-b
+                            from-purple-400/20
+                            via-purple-400
+                            to-purple-400/20
+                            shadow-[0_0_18px_rgba(168,85,247,0.8)]
+                            hidden
+                            md:block
+                        "
+                    />
+
+                    {/* MOBILE TIMELINE */}
+
+                    <div
+                        className="
+                            absolute
+                            left-4
+                            top-0
+                            bottom-0
+                            w-[2px]
+                            bg-linear-to-b
+                            from-purple-400/20
+                            via-purple-400
+                            to-purple-400/20
+                            shadow-[0_0_18px_rgba(168,85,247,0.8)]
+                            md:hidden
                         "
                     />
 
 
-                    {/* ================= TIMELINE ================= */}
+                    {/* JOURNEY CONTINUES */}
 
-                    <div className="relative z-10 pt-6 md:pt-8">
-
-                        {/* Timeline Line */}
+                    <div className="relative flex justify-center mb-16">
 
                         <div
                             className="
-                                timeline-glow
                                 absolute
-                                left-0
-                                md:left-1/2
-                                top-0
-                                bottom-0
-                                w-1
+                                left-1/2
+                                -translate-x-1/2
+                                top-full
+                                w-[2px]
+                                h-16
                                 bg-linear-to-b
-                                from-primary-dark
-                                via-primary-dark/80
-                                to-primary/20
-                                md:-translate-x-1/2
-                                shadow-[0_0_30px_rgba(32,178,166,0.9)]
+                                from-purple-400/60
+                                to-purple-400/20
                             "
                         />
 
+                        <div
+                            className="
+                                relative
+                                px-8
+                                py-5
+                                rounded-2xl
+                                border
+                                border-purple-400/30
+                                bg-white/[0.04]
+                                backdrop-blur-xl
+                                shadow-[0_0_40px_rgba(139,92,246,0.12)]
+                                text-center
+                            "
+                        >
+                            <span
+                                className="
+                                    block
+                                    text-xs
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-purple-300/60
+                                    mb-2
+                                "
+                            >
+                                And the journey continues
+                            </span>
 
-                        {/* ================= EXPERIENCE ITEMS ================= */}
+                            <span
+                                className="
+                                    text-lg
+                                    md:text-xl
+                                    font-semibold
+                                    text-white
+                                "
+                            >
+                                More to come
+                            </span>
+                        </div>
 
-                        <div className="space-y-12">
+                    </div>
 
-                            {experience.map((exp, idx) => (
 
+                    {/* EXPERIENCE ITEMS */}
+
+                    <div className="space-y-12 md:space-y-20">
+
+                        {experience.map((exp, idx) => {
+
+                            const isLeft = idx % 2 === 0;
+
+                            return (
                                 <div
                                     key={idx}
                                     className="
                                         relative
                                         grid
                                         md:grid-cols-2
-                                        gap-8
-                                        animate-fade-in
+                                        md:gap-20
                                     "
                                     style={{
                                         animationDelay: `${(idx + 1) * 150}ms`,
                                     }}
                                 >
 
-                                    {/* Timeline Dot */}
+                                    {/* TIMELINE NODE */}
 
                                     <div
                                         className={`
                                             absolute
-                                            left-0
+                                            z-20
+                                            left-4
                                             md:left-1/2
                                             top-1/2
                                             -translate-y-1/2
-                                            w-4
-                                            h-4
-                                            rounded-full
-                                            bg-primary
-                                            border-4
-                                            border-purple-100
                                             md:-translate-x-1/2
-                                            shadow-[0_0_15px_rgba(32,178,166,0.8)]
-                                            z-10
-                                            ${exp.current ? "current-dot" : ""}
+                                            w-6
+                                            h-6
+                                            rounded-full
+                                            border-2
+                                            border-purple-300
+                                            bg-[#120a26]
+                                            shadow-[0_0_20px_rgba(168,85,247,0.8)]
+                                            ${
+                                                exp.current
+                                                    ? "current-dot"
+                                                    : ""
+                                            }
                                         `}
                                     >
+                                        <span
+                                            className="
+                                                absolute
+                                                inset-1
+                                                rounded-full
+                                                bg-purple-400
+                                                shadow-[0_0_12px_rgba(168,85,247,1)]
+                                            "
+                                        />
 
                                         {exp.current && (
                                             <span
                                                 className="
                                                     absolute
-                                                    inset-0
+                                                    -inset-2
                                                     rounded-full
-                                                    bg-purple-500
+                                                    border
+                                                    border-purple-400/50
                                                     animate-ping
-                                                    opacity-75
                                                 "
                                             />
                                         )}
-
                                     </div>
 
 
-                                    {/* ================= CONTENT ================= */}
+                                    {/* LEFT CARD */}
 
-                                    <div
-                                        className={`
-                                            pl-8
-                                            md:pl-0
-                                            ${
-                                                idx % 2 === 0
-                                                    ? "md:pr-16 md:text-right"
-                                                    : "md:col-start-2 md:pl-16"
-                                            }
-                                        `}
-                                    >
-
-                                        {/* Clickable Bubble */}
-
-                                        <Link
-                                            to={exp.path}
-                                            className="block group relative z-20"
+                                    {isLeft && (
+                                        <div
+                                            className="
+                                                md:col-start-1
+                                                md:pr-0
+                                                pl-12
+                                                md:pl-0
+                                            "
                                         >
-
-                                            <div
-                                                className="
-                                                    bg-white/80
-                                                    p-6
-                                                    rounded-2xl
-                                                    border-3
-                                                    border-primary-dark/80
-                                                    bg-purple-50/45
-                                                    backdrop-blur-md
-                                                    shadow-[0_10px_30px_rgba(139,92,246,0.10)]
-                                                    transition-all
-                                                    duration-500
-                                                    group-hover:border-purple-500
-                                                    group-hover:bg-purple-100/60
-                                                    group-hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]
-                                                    group-hover:-translate-y-1
-                                                "
-                                            >
-
-                                                {/* Period */}
-
-                                                <span
-                                                    className="
-                                                        text-sm
-                                                        text-primary
-                                                        font-medium
-                                                        transition-colors
-                                                        duration-500
-                                                        group-hover:text-purple-500
-                                                    "
-                                                >
-                                                    {exp.period}
-                                                </span>
+                                            <ExperienceCard
+                                                exp={exp}
+                                                index={idx}
+                                            />
+                                        </div>
+                                    )}
 
 
-                                                {/* Role */}
+                                    {/* RIGHT CARD */}
 
-                                                <h3
-                                                    className="
-                                                        text-xl
-                                                        font-semibold
-                                                        mt-2
-                                                        text-black
-                                                        transition-colors
-                                                        duration-500
-                                                        group-hover:text-purple-600
-                                                    "
-                                                >
-                                                    {exp.role}
-                                                </h3>
-
-
-                                                {/* Company */}
-
-                                                <p
-                                                    className="
-                                                        text-purple-900/70
-                                                        transition-colors
-                                                        duration-500
-                                                        group-hover:text-purple-700
-                                                    "
-                                                >
-                                                    {exp.company}
-                                                </p>
-
-
-                                                {/* Description */}
-
-                                                <p
-                                                    className="
-                                                        text-sm
-                                                        text-purple-900/60
-                                                        mt-4
-                                                        transition-colors
-                                                        duration-500
-                                                        group-hover:text-purple-800
-                                                    "
-                                                >
-                                                    {exp.description}
-                                                </p>
-
-
-                                                {/* Technologies */}
-
-                                                <div
-                                                    className={`
-                                                        flex
-                                                        flex-wrap
-                                                        gap-2
-                                                        mt-4
-                                                        ${
-                                                            idx % 2 === 0
-                                                                ? "md:justify-end"
-                                                                : ""
-                                                        }
-                                                    `}
-                                                >
-
-                                                    {exp.technologies.map(
-                                                        (tech, techIdx) => (
-
-                                                            <span
-                                                                key={techIdx}
-                                                                className="
-                                                                    px-3
-                                                                    py-1
-                                                                    rounded-full
-                                                                    text-xs
-                                                                    font-medium
-                                                                    bg-purple-500/10
-                                                                    text-purple-700
-                                                                    border
-                                                                    border-purple-400/20
-                                                                    transition-all
-                                                                    duration-500
-                                                                    group-hover:bg-purple-500/15
-                                                                    group-hover:text-purple-600
-                                                                    group-hover:border-purple-500/30
-                                                                "
-                                                            >
-                                                                {tech}
-                                                            </span>
-
-                                                        )
-                                                    )}
-
-                                                </div>
-
-                                            </div>
-
-                                        </Link>
-
-                                    </div>
+                                    {!isLeft && (
+                                        <div
+                                            className="
+                                                md:col-start-2
+                                                pl-12
+                                            "
+                                        >
+                                            <ExperienceCard
+                                                exp={exp}
+                                                index={idx}
+                                            />
+                                        </div>
+                                    )}
 
                                 </div>
-
-                            ))}
-
-                        </div>
+                            );
+                        })}
 
                     </div>
 
                 </div>
 
             </div>
-
         </section>
     );
 };
+
+
+/* =========================================================
+   EXPERIENCE CARD
+========================================================= */
+
+const ExperienceCard = ({ exp, index }) => {
+
+    return (
+        <Link
+            to={exp.path}
+            className="
+                block
+                group
+                relative
+            "
+        >
+
+            <div
+                className="
+                    relative
+                    overflow-hidden
+                    rounded-3xl
+                    border
+                    border-purple-400/20
+                    bg-[#100a20]/85
+                    backdrop-blur-xl
+                    shadow-[0_15px_50px_rgba(0,0,0,0.35)]
+                    transition-all
+                    duration-500
+                    hover:-translate-y-2
+                    hover:border-purple-400/60
+                    hover:shadow-[0_20px_60px_rgba(139,92,246,0.28)]
+                "
+            >
+
+                {/* IMAGE */}
+
+                <div
+                    className="
+                        relative
+                        h-44
+                        md:h-48
+                        overflow-hidden
+                    "
+                >
+
+                    <img
+                        src={exp.image}
+                        alt=""
+                        className="
+                            w-full
+                            h-full
+                            object-cover
+                            opacity-70
+                            grayscale-[20%]
+                            transition-all
+                            duration-700
+                            group-hover:scale-105
+                            group-hover:opacity-90
+                        "
+                    />
+
+                    {/* Image darkening */}
+
+                    <div
+                        className="
+                            absolute
+                            inset-0
+                            bg-linear-to-b
+                            from-black/10
+                            via-black/20
+                            to-[#100a20]
+                        "
+                    />
+
+                    {/* Purple image glow */}
+
+                    <div
+                        className="
+                            absolute
+                            inset-0
+                            bg-purple-700/10
+                            mix-blend-screen
+                        "
+                    />
+
+                    {/* Current label */}
+
+                    {exp.current && (
+                        <div
+                            className="
+                                absolute
+                                top-4
+                                right-4
+                                px-3
+                                py-1.5
+                                rounded-full
+                                bg-purple-500/20
+                                border
+                                border-purple-300/30
+                                backdrop-blur-md
+                                text-[10px]
+                                uppercase
+                                tracking-[0.18em]
+                                text-purple-200
+                                shadow-[0_0_20px_rgba(168,85,247,0.2)]
+                            "
+                        >
+                            Current
+                        </div>
+                    )}
+
+                    {/* Experience number */}
+
+                    <div
+                        className="
+                            absolute
+                            top-4
+                            left-4
+                            text-xs
+                            font-semibold
+                            tracking-[0.2em]
+                            text-white/40
+                        "
+                    >
+                        0{index + 1}
+                    </div>
+
+                </div>
+
+
+                {/* CONTENT */}
+
+                <div
+                    className="
+                        relative
+                        px-7
+                        md:px-9
+                        pt-3
+                        pb-8
+                        text-center
+                    "
+                >
+
+                    {/* Period */}
+
+                    <div
+                        className="
+                            text-xs
+                            md:text-sm
+                            uppercase
+                            tracking-[0.18em]
+                            text-purple-300/70
+                        "
+                    >
+                        {exp.period}
+                    </div>
+
+
+                    {/* Title */}
+
+                    <h3
+                        className="
+                            mt-3
+                            text-xl
+                            md:text-2xl
+                            font-semibold
+                            text-white
+                            leading-tight
+                            transition-colors
+                            duration-300
+                            group-hover:text-purple-200
+                        "
+                    >
+                        {exp.role}
+                    </h3>
+
+
+                    {/* Company */}
+
+                    <p
+                        className="
+                            mt-2
+                            text-sm
+                            text-purple-300/70
+                        "
+                    >
+                        {exp.company}
+                    </p>
+
+
+                    {/* Description */}
+
+                    <p
+                        className="
+                            mt-5
+                            text-sm
+                            md:text-base
+                            leading-relaxed
+                            text-white/50
+                            max-w-xl
+                            mx-auto
+                        "
+                    >
+                        {exp.description}
+                    </p>
+
+
+                    {/* Technologies */}
+
+                    <div
+                        className="
+                            flex
+                            flex-wrap
+                            justify-center
+                            gap-2
+                            mt-6
+                        "
+                    >
+                        {exp.technologies.map((tech, techIdx) => (
+                            <span
+                                key={techIdx}
+                                className="
+                                    px-3
+                                    py-1
+                                    rounded-full
+                                    text-[11px]
+                                    font-medium
+                                    bg-purple-500/10
+                                    border
+                                    border-purple-400/15
+                                    text-purple-200/70
+                                    transition-all
+                                    duration-300
+                                    group-hover:border-purple-400/30
+                                    group-hover:bg-purple-500/15
+                                "
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+
+
+                    {/* BUTTON */}
+
+                    <div className="flex justify-center mt-7">
+
+                        <span
+                            className="
+                                inline-flex
+                                items-center
+                                gap-2
+                                px-5
+                                py-2.5
+                                rounded-xl
+                                bg-purple-500/20
+                                border
+                                border-purple-400/30
+                                text-sm
+                                font-medium
+                                text-purple-100
+                                shadow-[0_0_20px_rgba(139,92,246,0.15)]
+                                transition-all
+                                duration-300
+                                group-hover:bg-purple-500/40
+                                group-hover:border-purple-300/50
+                                group-hover:shadow-[0_0_25px_rgba(139,92,246,0.3)]
+                            "
+                        >
+                            Explore experience
+
+                            <ArrowUpRight
+                                size={16}
+                                className="
+                                    transition-transform
+                                    duration-300
+                                    group-hover:translate-x-1
+                                    group-hover:-translate-y-1
+                                "
+                            />
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                {/* CARD GLOW */}
+
+                <div
+                    className="
+                        absolute
+                        -bottom-20
+                        left-1/2
+                        -translate-x-1/2
+                        w-64
+                        h-32
+                        rounded-full
+                        bg-purple-500/10
+                        blur-3xl
+                        pointer-events-none
+                        transition-opacity
+                        duration-500
+                        opacity-0
+                        group-hover:opacity-100
+                    "
+                />
+
+            </div>
+
+        </Link>
+    );
+};
+

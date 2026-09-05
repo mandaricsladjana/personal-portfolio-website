@@ -4,6 +4,7 @@ import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { Skills } from "@/sections/Skills";
+import { Services } from "@/sections/Services";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/layout/Footer";
 
@@ -16,6 +17,9 @@ import ExperienceQualityEngineer from "@/pages/ExperienceQualityEngineer";
 import ExperienceLogistics from "@/pages/ExperienceLogistics";
 import ExperienceAnalytics from "@/pages/ExperienceAnalytics";
 
+import { AllProjects } from "@/pages/AllProjects";
+import { ProjectDetails } from "@/projects/ProjectDetails";
+
 function App() {
 return ( <HashRouter>
   <ScrollToTop />
@@ -24,43 +28,54 @@ return ( <HashRouter>
 
             <Navbar />
 
-            <Routes>
+<Routes>
 
-                <Route
-                    path="/"
-                    element={
-                        <main>
-                            <Hero />
-                            <About />
-                            <Projects />
-                            <Experience />
-                            <Skills />
-                            <Contact />
-                        </main>
-                    }
-                />
+    <Route
+        path="/"
+        element={
+            <main>
+                <Hero />
+                <About />
+                <Projects />
+                <Services />
+                <Experience />
+                <Skills />
+                <Contact />
+            </main>
+        }
+    />
 
-                <Route
-                    path="/experience/ads"
-                    element={<ExperienceAds />}
-                />
+    <Route
+        path="/experience/ads"
+        element={<ExperienceAds />}
+    />
 
-                <Route
-                    path="/experience/quality-engineer"
-                    element={<ExperienceQualityEngineer />}
-                />
+    <Route
+        path="/experience/quality-engineer"
+        element={<ExperienceQualityEngineer />}
+    />
 
-                <Route
-                    path="/experience/logistics"
-                    element={<ExperienceLogistics />}
-                />
+    <Route
+        path="/experience/logistics"
+        element={<ExperienceLogistics />}
+    />
 
-                <Route
-                    path="/experience/data-analytics"
-                    element={<ExperienceAnalytics />}
-                />
+    <Route
+        path="/experience/data-analytics"
+        element={<ExperienceAnalytics />}
+    />
 
-            </Routes>
+    <Route
+        path="/pages"
+        element={<AllProjects />}
+    />
+
+    <Route
+        path="/projects/:projectId"
+        element={<ProjectDetails />}
+    />
+
+</Routes>
 
             <Footer />
 

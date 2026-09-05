@@ -7,6 +7,7 @@ const Navlinks = [
     { href: "home", title: "Home" },
     { href: "about", title: "About Me" },
     { href: "experience", title: "Experience" },
+    { href: "services", title: "Services" },
     { href: "projects", title: "Projects" },
     { href: "skills", title: "Skills" },
 ];
@@ -211,3 +212,4 @@ export const Navbar = () => {
         </header>
     );
 };
+

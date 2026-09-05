@@ -72,9 +72,9 @@ body {
 
 .glow-border {
   box-shadow:
-    0 0 20px rgba(124, 58, 237, 0.38),
-    0 0 45px rgba(109, 40, 217, 0.20),
-    inset 0 0 20px rgba(139, 92, 246, 0.10);
+    0 0 20px rgba(124, 58, 237, 0.6),
+    0 0 40px rgba(87, 34, 180, 0.3),
+    inset 0 0 20px rgba(124, 58, 237, 0.15);
 }
 
 
